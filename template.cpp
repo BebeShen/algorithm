@@ -1,10 +1,3 @@
-/*
-    Bubble sort
-
-    Steps:
-        1. 
-*/
-
 #include<iostream>
 #include<vector>
 
