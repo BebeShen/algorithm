@@ -5,3 +5,9 @@ void print_v(vector<int> v){
         cout<<v[i]<<" ";
     }cout<<endl;
 }
+
+template<typename T>void SWAP(T& a, T& b){
+    T t = a;
+    a = b;
+    b = t;
+}
