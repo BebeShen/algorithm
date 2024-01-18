@@ -1,3 +1,7 @@
+s.exe: selectionsort.o com.o
+	g++ selectionsort.o com.o -o s.exe
+selectionsort.o: selectionsort.cpp com.h
+	g++ -c selectionsort.cpp
 i.exe: insertionsort.o com.o
 	g++ insertionsort.o com.o -o i.exe
 insertionsort.o: insertionsort.cpp com.h

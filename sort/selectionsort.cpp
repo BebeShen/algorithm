@@ -1,7 +1,7 @@
 /*
-    Insertion sort
+    Selection sort
 
-    Time Complexity     : O(N^2) , or O(NlogN) by using binary search
+    Time Complexity     : O(N^2)
     Space Complexity    : O(1)
 
     ref: https://jimmyswebnote.com/bubble-sort/
@@ -12,14 +12,19 @@
 
 using namespace std;
 
-void Insertionsort(vector<int>& v){
-    int n = v.size();
-    for(int i=1;i<n;i++){
-        int j = i;
-        while(v[j]<v[j-1]){
-            swap(v[j], v[j-1]);
-            j--;
+void Selectionsort(vector<int>& v){
+    int index = v.size();
+    while(index--){
+        // find max
+        int _max = v[index];
+        int _max_index = index;
+        for(int i=0;i<=index;i++){
+            if(v[i]>_max){
+                _max = v[i];
+                _max_index = i;
+            }
         }
+        swap(v[index], v[_max_index]);
     }
 }
 
@@ -31,7 +36,7 @@ int main(){
     int arr[] = { 56, 27, 38, 48, 61, 76, 13, 27, 88, 2};
     vector<int> v(arr, arr+10);
     cout<<"Before sorting: ";    print_v(v);
-    Insertionsort(v);
+    Selectionsort(v);
     cout<<"After sorting: ";    print_v(v);
 
     return 0;
